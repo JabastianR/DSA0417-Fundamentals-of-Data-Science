@@ -1,0 +1,17 @@
+import numpy as np
+
+# Example dataset: fuel efficiency of different car models (mpg)
+fuel_efficiency = np.array([25, 30, 28, 35, 32])
+
+# Calculate average fuel efficiency
+average_efficiency = np.mean(fuel_efficiency)
+
+# Get user input for two car models to compare (index-based)
+model1 = int(input("Enter the index of the first car model (0 to {}): ".format(len(fuel_efficiency)-1)))
+model2 = int(input("Enter the index of the second car model (0 to {}): ".format(len(fuel_efficiency)-1)))
+
+# Calculate percentage improvement from model1 to model2
+percentage_improvement = ((fuel_efficiency[model2] - fuel_efficiency[model1]) / fuel_efficiency[model1]) * 100
+
+print("Average fuel efficiency of all cars:", average_efficiency)
+print("Percentage improvement from model {} to model {}: {:.2f}%".format(model1, model2, percentage_improvement))
