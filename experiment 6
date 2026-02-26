@@ -1,0 +1,28 @@
+# Input item prices
+prices = list(map(float, input("Enter item prices separated by space: ").split()))
+
+# Input quantities
+quantities = list(map(int, input("Enter quantities separated by space: ").split()))
+
+# Input discount and tax rates
+discount_rate = float(input("Enter discount rate (%): "))
+tax_rate = float(input("Enter tax rate (%): "))
+
+# Step 1: Calculate subtotal
+subtotal = 0
+for i in range(len(prices)):
+    subtotal += prices[i] * quantities[i]
+
+# Step 2: Apply discount
+discount_amount = subtotal * (discount_rate / 100)
+after_discount = subtotal - discount_amount
+
+# Step 3: Apply tax
+tax_amount = after_discount * (tax_rate / 100)
+total_cost = after_discount + tax_amount
+
+# Output results
+print("Subtotal:", subtotal)
+print("Discount amount:", discount_amount)
+print("Tax amount:", tax_amount)
+print("Total cost to pay:", total_cost)
